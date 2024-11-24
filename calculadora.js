@@ -19,19 +19,22 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     xMeasureDOM.addEventListener('change', (e) => saveChange('inputMeasure', e.target.value));
     yMeasureDOM.addEventListener('change', (e) => saveChange('outputMeasure', e.target.value));
+    
+    xMeasureDOM.addEventListener('change', clearResults);
 
+    let inputDOM = document.getElementById('x');
+    inputDOM.addEventListener('input', calcular);
 
 });
 
 const saveChange = (name, value) => {
-    console.log(value);
     window.localStorage.setItem(name, value);
 }
 
-
-
-
-
+const clearResults = () => {
+    document.getElementById('x').value = '';
+    document.getElementById('y').value = '';
+}
 
 function calcular() {
     let x = document.getElementById('x');
@@ -47,6 +50,9 @@ function calcular() {
     else if (xMeasure == 'libra' && yMeasure == 'kilo') {
         let total = libraKilo(x.value);
         y.value = total;
+    }
+    else {
+        alert('No implementado aún');
     }
     
 }
