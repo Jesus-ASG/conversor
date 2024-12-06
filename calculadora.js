@@ -1,12 +1,12 @@
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', () => {
     let inputStorage = window.localStorage.getItem('inputMeasure');
     let outputStorage = window.localStorage.getItem('outputMeasure');
 
-    if (!inputStorage){
+    if (!inputStorage) {
         inputStorage = 'kilo';
         window.localStorage.setItem('inputMeasure', inputStorage);
     }
-    if (!outputStorage){
+    if (!outputStorage) {
         outputStorage = 'kilo';
         window.localStorage.setItem('outputMeasure', outputStorage);
     }
@@ -19,11 +19,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     xMeasureDOM.addEventListener('change', (e) => saveChange('inputMeasure', e.target.value));
     yMeasureDOM.addEventListener('change', (e) => saveChange('outputMeasure', e.target.value));
-    
+
     xMeasureDOM.addEventListener('change', clearResults);
 
     let inputDOM = document.getElementById('x');
+    let outputDOM = document.getElementById('y');
+
     inputDOM.addEventListener('input', calcular);
+    outputDOM.addEventListener('click', copyToClipboard);
 
 });
 
@@ -54,7 +57,26 @@ function calcular() {
     else {
         alert('No implementado aún');
     }
-    
+
+}
+
+function copyToClipboard() {
+    let dom = document.getElementById('y');
+
+    if (!dom.value)
+        return;
+
+    dom.select();
+    navigator.clipboard.writeText(dom.value);
+    showClipboard();
+}
+
+function showClipboard() {
+    let messageDOM = document.getElementById('clipboardMessage');
+    messageDOM.classList.add('show');
+    setTimeout(function () {
+        messageDOM.classList.remove('show');
+    }, 2300);
 }
 
 
