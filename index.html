@@ -18,32 +18,45 @@
     <div class="wrapper">
         <h1 class="title">Conversor</h1>
 
-        <div class="conversor-wrapper">
+        <div class="tab">
 
-            <div class="measure">
-                <!-- <label for="x">Entrada</label> -->
-                <input type="number" id="x" class="input" placeholder="" autocomplete="off">
-                <select id="xMeasure" class="select">
-                    <option value="kilo">Kilos</option>
-                    <option value="libra">Libras</option>
-                    <option value="metro">Metros</option>
-                    <option value="pulgada">Pulgadas</option>
-                </select>
-            </div>
-            <div class="measure">
-                <!-- <label for="y">Salida</label> -->
-                <input type="number" id="y" readonly class="input" placeholder="" autocomplete="off">
-                <select id="yMeasure" class="select">
-                    <option value="kilo">Kilos</option>
-                    <option value="libra">Libras</option>
-                    <option value="metro">Metros</option>
-                    <option value="pulgada">Pulgadas</option>
-                </select>
-            </div>
+            <div class="conversor-wrapper">
 
-            <!-- <div>
-                <button onclick="calcular()">Calcular</button>
-            </div> -->
+                <div class="measure">
+                    <!-- <label for="x">Entrada</label> -->
+                    <input type="number" id="x" class="input" placeholder="" autocomplete="off">
+                    <select id="xMeasure" class="select">
+                        <option value="kilo">Kilo</option>
+                        <option value="libra">Libra</option>
+                        <option value="galon">Galón</option>
+                        <option value="litro">Litro</option>
+                        <option value="">----</option>
+                        <option value="metro">Metro</option>
+                        <option value="pulgada">Pulgada</option>
+                        <option value="pie">Pie</option>
+                        <option value="yarda">Yarda</option>
+                    </select>
+                </div>
+                <div class="measure">
+                    <!-- <label for="y">Salida</label> -->
+                    <input type="number" id="y" readonly class="input" placeholder="" autocomplete="off">
+                    <select id="yMeasure" class="select">
+                        <option value="kilo">Kilo</option>
+                        <option value="libra">Libra</option>
+                        <option value="galon">Galón</option>
+                        <option value="litro">Litro</option>
+                        <option value="">----</option>
+                        <option value="metro">Metro</option>
+                        <option value="pulgada">Pulgada</option>
+                        <option value="pie">Pie</option>
+                        <option value="yarda">Yarda</option>
+                    </select>
+                </div>
+
+                <!-- <div>
+                    <button onclick="calcular()">Calcular</button>
+                </div> -->
+            </div>
         </div>
         <br>
         <div style="display: flex; width: 100%; align-items: center; justify-content: center;">

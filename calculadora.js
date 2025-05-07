@@ -54,6 +54,30 @@ function calcular() {
         let total = libraKilo(x.value);
         y.value = total;
     }
+    else if (xMeasure == 'galon' && yMeasure == 'litro') {
+        let total = Math.round((x.value * 3.7853) * 1000) / 1000;
+        y.value = total;
+    }
+    else if (xMeasure == 'litro' && yMeasure == 'galon') {
+        let total = Math.round((x.value / 3.7853) * 1000) / 1000;
+        y.value = total;
+    }
+    else if (xMeasure == 'pie' && yMeasure == 'metro') {
+        let total = Math.round((x.value * .3048) * 1000) / 1000;
+        y.value = total;
+    }
+    else if (xMeasure == 'metro' && yMeasure == 'pie') {
+        let total = Math.round((x.value / .3048) * 1000) / 1000;
+        y.value = total;
+    }
+    else if (xMeasure == 'yarda' && yMeasure == 'metro') {
+        let total = Math.round((x.value * .9144) * 1000) / 1000;
+        y.value = total;
+    }
+    else if (xMeasure == 'metro' && yMeasure == 'yarda') {
+        let total = Math.round((x.value / .9144) * 1000) / 1000;
+        y.value = total;
+    }
     else {
         alert('No implementado aún');
     }
